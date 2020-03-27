@@ -8,7 +8,7 @@
 |email|string|null: false|
 |password|string|null: false|
 ### Asociation
-- has_many :groups
+- has_many :groups, through: :groups_users
 - has_many :messages
 
 ## groupsテーブル
@@ -19,7 +19,7 @@
 |messages_id|integer|null: false, foreign_key: true|
 ### Asociation
 - has_many :messages
-- has_many :users
+- has_many :users, through: :groups_users
 
 ## groups_usersテーブル
 |Column|Type|Options|
