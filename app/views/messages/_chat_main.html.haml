@@ -1,0 +1,54 @@
+.chat-main
+  .main-top
+    .main-top-box
+      .main-top-box__group-name
+        a
+      .main-top-box__member
+        Member :
+    .main-top-edit
+      = link_to "#", class: "main-top-edit__btn" do
+        Edit
+
+
+  .main-message
+    .main-message-box
+      .main-message-box-info
+        .main-message-box-info__user
+          taka
+        .main-message-box-info__time
+          2020/03/30(Mon) 21:00:00
+      .main-message-box-text
+        おはよう！！
+
+    .main-message-box
+      .main-message-box-info
+        .main-message-box-info__user
+          hiroki
+        .main-message-box-info__time
+          2020/03/30(Mon) 21:30:00
+      .main-message-box-text
+        こんにちは！！
+
+    .main-message-box
+      .main-message-box-info
+        .main-message-box-info__user
+          teppe
+        .main-message-box-info__time
+          2020/03/30(Mon) 22:00:00
+      .main-message-box-text
+        こんばんは！！
+
+  .main-form
+    .form-box
+      .input-box
+        %input.input-box__text{:placeholder => "type a message", :type => "text"}
+          
+        %label.input-box__image
+          = icon("fa", "image")
+          %input.input-box__image__file{type: "file"}
+          
+
+      
+      
+      %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}
+      

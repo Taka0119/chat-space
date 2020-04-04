@@ -1,0 +1,23 @@
+.chat-side
+  .side-top
+    .side-top-box
+      %p.side-top-box__user-name
+        taka
+      .side-top-box__btn
+        = link_to "#", class: "side-top-box__btn" do
+          = icon("far", "edit", class: "side-top-box__btn--edit")
+          %span<>
+
+        = link_to "#", class: "side-top-box__btn" do
+          = icon("fas", "cog", class: "side-top-box__btn--cog")
+          %span<>
+
+
+
+  .groups
+    = link_to "#", class: "groups__btn" do
+      .group
+        .group__group-name
+          taka
+        .group__message
+          まだメッセージがありません
