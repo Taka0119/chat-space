@@ -2,13 +2,13 @@
   .side-top
     .side-top-box
       %p.side-top-box__user-name
-        taka
+        = current_user.name
       .side-top-box__btn
         = link_to "#", class: "side-top-box__btn" do
           = icon("far", "edit", class: "side-top-box__btn--edit")
           %span<>
 
-        = link_to "#", class: "side-top-box__btn" do
+        = link_to edit_user_path(current_user), class: "side-top-box__btn" do
           = icon("fas", "cog", class: "side-top-box__btn--cog")
           %span<>
 
