@@ -4,7 +4,7 @@
       %p.side-top-box__user-name
         = current_user.name
       .side-top-box__btn
-        = link_to "#", class: "side-top-box__btn" do
+        = link_to new_group_path, class: "side-top-box__btn" do
           = icon("far", "edit", class: "side-top-box__btn--edit")
           %span<>
 
@@ -13,9 +13,10 @@
           %span<>
 
   .groups
-    = link_to "#", class: "groups__btn" do
-      .group
-        .group__group-name
-          taka
-        .group__message
-          まだメッセージがありません
+    - current_user.groups.each do |group|
+      = link_to "#", class: "groups__btn" do
+        .group
+          .group__group-name
+            = group.name
+          .group__message
+            メッセージはありません
