@@ -2,53 +2,25 @@
   .main-top
     .main-top-box
       .main-top-box__group-name
-        
+        = @group.name
       .main-top-box__member
-        Member :
+        Members:
+        - @group.users.each do |user|
+          = user.name
     .main-top-edit
       = link_to "#", class: "main-top-edit__btn" do
         Edit
 
 
   .main-message
-    .main-message-box
-      .main-message-box-info
-        .main-message-box-info__user
-          taka
-        .main-message-box-info__time
-          2020/03/30(Mon) 21:00:00
-      .main-message-box-text
-        おはよう！！
-
-    .main-message-box
-      .main-message-box-info
-        .main-message-box-info__user
-          hiroki
-        .main-message-box-info__time
-          2020/03/30(Mon) 21:30:00
-      .main-message-box-text
-        こんにちは！！
-
-    .main-message-box
-      .main-message-box-info
-        .main-message-box-info__user
-          teppe
-        .main-message-box-info__time
-          2020/03/30(Mon) 22:00:00
-      .main-message-box-text
-        こんばんは！！
+    = render @messages
 
   .main-form
-    .form-box
-      .input-box
-        %input.input-box__text{placeholder: "type a message", type: "text"}
-          
-        %label.input-box__image
-          = icon("fa", "image")
-          %input.input-box__image__file{type: "file"}
-          
-
-      
-      
-      %input.submit-btn{name: "commit", type: "submit", value: "Send"}
-      
+    = form_for [@group, @message] do |f|
+      .form-box
+        .input-box
+          = f.text_field :content, class: 'input-box__message', placeholder: 'type a message'
+          = f.label :image, class: 'input-box__image' do
+            = icon("fa", "image")
+            = f.file_field :image, class: 'input-box__image__file'
+        = f.submit 'Send', class: 'submit-btn'
