@@ -78,7 +78,7 @@ $(function(){
           insertHTML += buildHTML(message)
         });
         $('.main-message').append(insertHTML);
-        $('.main-message').animate({ scrollTop: $('.main-messaeg')[0].scrollHeight})
+        $('.main-message').animate({ scrollTop: $('.main-message')[0].scrollHeight})
       } 
     })
     .fail(function() {
